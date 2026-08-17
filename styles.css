@@ -134,19 +134,22 @@ nav.container{
   display:none;
   flex-direction:column;
   justify-content:center;
-  gap:5px;
-  width:32px;
-  height:32px;
+  align-items:center;
+  gap:6px;
+  width:44px;
+  height:44px;
   background:none;
-  border:none;
+  border:1px solid rgba(51,32,47,0.25);
+  border-radius:4px;
   cursor:pointer;
   padding:0;
 }
 .nav-toggle span{
   display:block;
-  height:1px;
+  height:2px;
+  width:22px;
   background:var(--plum);
-  width:100%;
+  border-radius:1px;
 }
 
 .btn{
@@ -672,6 +675,85 @@ section{
   color:var(--gold);
 }
 
+/* ---------- Blog index ---------- */
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:28px;
+  margin-top:50px;
+}
+@media(max-width:800px){
+  .blog-grid{grid-template-columns:1fr;}
+}
+.blog-card{
+  background:var(--cream);
+  border:1px solid rgba(51,32,47,0.12);
+  padding:34px 30px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  transition:transform 0.35s ease, box-shadow 0.35s ease;
+}
+.blog-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(51,32,47,0.08);
+}
+.blog-card .tag{
+  font-size:0.7rem;
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  color:var(--rose-gold);
+  margin:0;
+}
+.blog-card .date{
+  font-size:0.78rem;
+  color:#8a7580;
+  margin:0;
+}
+.blog-card h3{font-size:1.35rem; margin:0;}
+.blog-card p{margin:0; font-size:0.96rem;}
+.blog-card .btn{margin-top:auto; align-self:flex-start;}
+
+/* ---------- Article page ---------- */
+.article-meta{
+  font-size:0.85rem;
+  color:var(--rose-gold);
+  letter-spacing:0.04em;
+  margin-top:16px;
+}
+.article-body{
+  max-width:700px;
+  margin:0 auto;
+}
+.article-body h2{
+  margin-top:48px;
+  margin-bottom:18px;
+  font-size:1.7rem;
+}
+.article-body p{
+  margin:0 0 20px;
+  font-size:1.03rem;
+  line-height:1.85;
+}
+.article-body ul{
+  margin:0 0 24px;
+  padding-left:22px;
+}
+.article-body ul li{
+  margin-bottom:10px;
+  font-size:1.03rem;
+  line-height:1.7;
+}
+.article-callout{
+  background:var(--blush);
+  padding:32px clamp(24px,4vw,36px);
+  margin:44px 0;
+  border-left:3px solid var(--gold);
+}
+.article-callout p{margin:0 0 16px; font-size:0.98rem;}
+.article-callout p:last-child{margin-bottom:0;}
+.article-callout .btn{margin-top:6px;}
+
 /* application steps (mentorship) */
 .steps{
   counter-reset:step;
@@ -809,7 +891,9 @@ footer{
   .page-mission-work header.scrolled nav.container .btn-ghost:hover{background:var(--plum); color:var(--cream);}
 }
 
+.page-mission-work .nav-toggle{border-color:rgba(250,246,239,0.4);}
 .page-mission-work .nav-toggle span{background:var(--cream);}
+.page-mission-work header.scrolled .nav-toggle{border-color:rgba(51,32,47,0.25);}
 .page-mission-work header.scrolled .nav-toggle span{background:var(--plum);}
 
 .skip-link{
