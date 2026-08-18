@@ -754,6 +754,22 @@ section{
 .article-callout p:last-child{margin-bottom:0;}
 .article-callout .btn{margin-top:6px;}
 
+/* ---------- Blog search ---------- */
+.blog-search-input{
+  width:100%;
+  padding:14px 18px;
+  border:1px solid rgba(51,32,47,0.25);
+  background:var(--cream);
+  font-family:'Jost', sans-serif;
+  font-size:0.95rem;
+  color:var(--ink);
+  border-radius:2px;
+}
+.blog-search-input:focus{
+  outline:none;
+  border-color:var(--gold);
+}
+
 /* application steps (mentorship) */
 .steps{
   counter-reset:step;
